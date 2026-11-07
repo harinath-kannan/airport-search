@@ -1,0 +1,75 @@
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.dropdown {
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.airport-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.airport-item:hover {
+  background: #f1f5f9;
+}
+
+.airport-item strong {
+  margin-right: 12px;
+}
+
+.airport-item small {
+  margin-left: 10px;
+  color: gray;
+}
+
+.airport-item p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.no-results {
+  padding: 15px;
+  color: gray;
+}
+
+pre {
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.airport-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.airport-item:hover,
+.airport-item.active {
+  background-color: #e0f2fe;
+}

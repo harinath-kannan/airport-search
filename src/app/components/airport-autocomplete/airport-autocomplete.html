@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Airport Search</h2>
+
+  <label for="airport">From</label>
+
+  <input
+    id="airport"
+    type="text"
+    placeholder="Search airport or city..."
+    [formControl]="searchControl"
+    (keydown)="onKeyDown($event, airportsList)"
+  />
+
+  @if (airports$ | async; as airports) {
+    @if (dropdownOpen && searchControl.value) {
+      <div class="dropdown">
+        @if (airports.length > 0) {
+          @for (airport of airports; track airport.code; let i = $index) {
+            <div
+              class="airport-item"
+              [class.active]="highlightedIndex === i"
+              (click)="selectAirport(airport)"
+            >
+              <strong>{{ airport.code }}</strong>
+              <span>{{ airport.city }}</span>
+              <small>{{ airport.country }}</small>
+              <p>{{ airport.name }}</p>
+            </div>
+          }
+        } @else {
+          <div class="no-results">No airports match</div>
+        }
+      </div>
+    }
+  }
+
+  @if (selectedAirport) {
+    <h3>Selected Airport</h3>
+    <pre>{{ selectedAirport | json }}</pre>
+  }
+</div>
